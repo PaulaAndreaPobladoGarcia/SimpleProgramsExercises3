@@ -1,17 +1,12 @@
+n = 1  
+fraccion = 0.5  
+suma = 0  
 
-def estimar_pi(n):
-    suma = 0
-    for i in range(n):
-        
-        signo = (-1) ** i
-        
-        denominador = 2 * i + 1
-        suma += signo / denominador
+print(f"{'Potencia':<10}{'Fracción':<15}{'Suma'}")
 
-    pi_estimado = 4 * suma
-    return pi_estimado
+while fraccion > 0.000001:
+    suma += fraccion  
+    print(f"{n:<10}{fraccion:<15}{suma}") 
+    n += 1  
+    fraccion /= 2  # La siguiente
 
-n = int(input("Ingrese el número de términos (n): "))
-
-pi = estimar_pi(n)
-print(f"Estimación de pi con {n} términos: {pi}")
