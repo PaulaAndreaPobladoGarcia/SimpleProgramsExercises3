@@ -1,5 +1,6 @@
-for i in range(1, 11):  
-    
-    for j in range(1, 11):  
-        print(f"{i * j:3}", end=" ")  
-    print()  
+num = int(input("ingresa el numero: "))
+divisores = []
+for i in range(1,num +1):
+    if num % i ==0: 
+        divisores.append(i)
+print (" ".join(map(str,divisores)))      
