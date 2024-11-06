@@ -1,20 +1,17 @@
-altura = int(input("ingrese cuanto quiere que sea de alto: "))
-ancho = int(input("ingrese cuanto quiere que se de ancho: "))
 
-for i in range(altura):
-    print("*" * ancho)
+def estimar_pi(n):
+    suma = 0
+    for i in range(n):
+        
+        signo = (-1) ** i
+        
+        denominador = 2 * i + 1
+        suma += signo / denominador
 
-altura = int(input("Altura: "))
+    pi_estimado = 4 * suma
+    return pi_estimado
 
+n = int(input("Ingrese el número de términos (n): "))
 
-for i in range(1, altura + 1):  
-    print("*" * i)  
-
-
-lado = int(input("Lado: "))
-
-for i in range(lado):
-    print(" " * (lado - i - 1) + "*" * (2 * i + 2))  
-
-for i in range(lado - 1):
-    print(" " * (i + 1) + "*" * (2 * (lado - i - 2) + 2)) 
+pi = estimar_pi(n)
+print(f"Estimación de pi con {n} términos: {pi}")
