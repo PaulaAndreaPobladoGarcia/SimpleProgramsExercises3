@@ -1,14 +1,20 @@
-tiempo_total = 0
+altura = int(input("ingrese cuanto quiere que sea de alto: "))
+ancho = int(input("ingrese cuanto quiere que se de ancho: "))
 
-while True:
-    duracion_tramo = int(input("Duracion tramo: "))
-    
-    if duracion_tramo == 0:
-        break
-    
-    tiempo_total += duracion_tramo
+for i in range(altura):
+    print("*" * ancho)
 
-horas = tiempo_total // 60  
-minutos = tiempo_total % 60  
+altura = int(input("Altura: "))
 
-print(f"Tiempo total de viaje: {horas}:{minutos:02d} horas")
+
+for i in range(1, altura + 1):  
+    print("*" * i)  
+
+
+lado = int(input("Lado: "))
+
+for i in range(lado):
+    print(" " * (lado - i - 1) + "*" * (2 * i + 2))  
+
+for i in range(lado - 1):
+    print(" " * (i + 1) + "*" * (2 * (lado - i - 2) + 2)) 
