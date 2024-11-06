@@ -1,28 +1,16 @@
-def factorial(n):
-    fact = 1
-    for i in range(1, n + 1):
-        fact *= i
-    return fact
+def longitud_collatz(n):
+    longitud = 1  
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        longitud += 1
+    return longitud
 
-def estimar_e():
-    n = 10  
-    suma = 0
-    anterior = 0
-    while True:
-        
-        actual = factorial(n)
-        
-        
-        suma += actual
-        
-        if abs(actual - anterior) < 0.0001:
-            break
-        
-        anterior = actual
-        
-        n += 1
-    
-    return suma
+n = int(input("Ingrese un número entero: "))
 
-e_aproximado = estimar_e()
-print(f"Valor aproximado de e: {e_aproximado}")
+for i in range(1, n):
+    longitud = longitud_collatz(i)
+    print(f"{i} {'*' * longitud}")
+
